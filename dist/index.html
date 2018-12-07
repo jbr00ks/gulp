@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Gulp App</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <h1>Exploration #4</h1>
+        <h2>Gulp</h2>
+        <h3>What is Gulp?</h3>
+        <p>Gulp is a toolkit for automating time-consuming tasks used in the development workflow.</p>
+        <p>Because Gulp is working on the backend on your server, there isn't a good way to show what its doing on a webpage.</p>
+        <p>Instead, below are listed some of the basic functions that can done with Gulp. Check them out!</p>
+            <pre>
+                <code class="code css language-js">
+                    <span class="code-function"><span class="code-title">gulp</span>.task(<span class="code-keyword">'html'</span>, <span class="code-func">function()</span></span>{
+                        <span class="code-title">gulp</span>.src('src/*.html')
+                        .pipe(gulp.dest('dist'));
+                    });
+                </code>
+            </pre>
+            <pre>
+                <code class="code css language-js">
+                    <span class="code-function"><span class="code-title">gulp</span>.task(<span class="code-keyword">'imageMin'</span>, <span class="code-func">function()</span></span>{
+                        <span class="code-title">gulp</span>.src('src/images/*')
+                        .pipe(<span class="code-func">imagemin()</span>)
+                        .pipe(gulp.dest('dist/images'));
+                    });
+                </code>
+            </pre>
+            <pre>
+                <code class="code css language-js">
+                    <span class="code-function"><span class="code-title">gulp</span>.task(<span class="code-keyword">'minify'</span>, <span class="code-func">function()</span></span>{
+                        <span class="code-title">gulp</span>.src('src/js/*.js')
+                        .pipe(<span class="code-func">uglify()</span>)
+                        .pipe(gulp.dest('dist/js'));
+                    });
+                </code>
+            </pre>
+            <pre>
+                <code class="code css language-js">
+                    <span class="code-function"><span class="code-title">gulp</span>.task(<span class="code-keyword">'sass'</span>, <span class="code-func">function()</span></span>{
+                        <span class="code-title">gulp</span>.src('src/sass/*.scss')
+                        .pipe(<span class="code-func">sass()</span>.on('error', sass.logError))
+                        .pipe(gulp.dest('dist/css'))
+                    });
+                </code>
+            </pre>
+            <pre>
+                <code class="code css language-js">
+                    <span class="code-function"><span class="code-title">gulp</span>.task(<span class="code-keyword">'scripts'</span>, <span class="code-func">function()</span></span>{
+                        <span class="code-title">gulp</span>.src('src/js/*.js')
+                        .pipe(concat('main.js'))
+                        .pipe(<span class="code-func">uglify()</span>)
+                        .pipe(gulp.dest('dist/js'));
+                    });
+                </code>
+            </pre>
+            <pre>
+                <code class="code css language-js">
+                    <span class="code-function"><span class="code-title">gulp</span>.task(<span class="code-keyword">'hint'</span>, <span class="code-func">function()</span></span>{
+                        <span class="code-title">gulp</span>.src('src/sass/*.scss')
+                        .pipe(<span class="code-func">jshint()</span>)
+                        .pipe(jshint.reporter('default'));
+                    });
+                </code>
+            </pre>
+            <pre>
+                <code class="code css language-js">
+                    <span class="code-function"><span class="code-title">gulp</span>.task(<span class="code-keyword">'default'</span>, [<span class="code-keyword">'message', 'html', 'imageMin', 'sass', 'scripts', 'hint'</span>]);</span>
+                </code>
+            </pre>
+            <pre>
+                <code class="code css language-js">
+                    <span class="code-function"><span class="code-title">gulp</span>.task(<span class="code-keyword">'watch'</span>, <span class="code-func">function()</span></span>{
+                        <span class="code-title">gulp</span>.watch('src/js/*.js', ['scripts']);
+                        <span class="code-title">gulp</span>.watch('src/images/*', ['imageMin']);
+                        <span class="code-title">gulp</span>.watch('src/sass/*.scss', ['sass']);
+                        <span class="code-title">gulp</span>.watch('src/*.html', ['html']);
+                    });
+                </code>
+            </pre>
+    </body>
+    <script src="js/main.js"></script>
+</html>
