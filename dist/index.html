@@ -12,6 +12,9 @@
         <p>Gulp is a toolkit for automating time-consuming tasks used in the development workflow.</p>
         <p>Because Gulp is working on the backend on your server, there isn't a good way to show what its doing on a webpage.</p>
         <p>Instead, below are listed some of the basic functions that can done with Gulp. Check them out!</p>
+        
+        <h3>Copy HTML</h3>
+        <p>This function allows you to copy any changes to your HTML files that you want to publish to your live site.</p>
             <pre>
                 <code class="code css language-js">
                     <span class="code-function"><span class="code-title">gulp</span>.task(<span class="code-keyword">'html'</span>, <span class="code-func">function()</span></span>{
@@ -20,6 +23,8 @@
                     });
                 </code>
             </pre>
+        <h3>ImageMin</h3>
+        <p>This function minifies images from your source, making the use less storage on your distribution.</p>
             <pre>
                 <code class="code css language-js">
                     <span class="code-function"><span class="code-title">gulp</span>.task(<span class="code-keyword">'imageMin'</span>, <span class="code-func">function()</span></span>{
@@ -29,6 +34,8 @@
                     });
                 </code>
             </pre>
+        <h3>Minify</h3>
+        <p>This function, similarly to the one above, minifies your JavaScript files to take up less space.</p>
             <pre>
                 <code class="code css language-js">
                     <span class="code-function"><span class="code-title">gulp</span>.task(<span class="code-keyword">'minify'</span>, <span class="code-func">function()</span></span>{
@@ -38,6 +45,8 @@
                     });
                 </code>
             </pre>
+        <h3>SASS</h3>
+        <p>SASS is a CSS extension language that makes designing a bit more fun and easy. This function converts your SASS files to CSS.</p>
             <pre>
                 <code class="code css language-js">
                     <span class="code-function"><span class="code-title">gulp</span>.task(<span class="code-keyword">'sass'</span>, <span class="code-func">function()</span></span>{
@@ -47,6 +56,8 @@
                     });
                 </code>
             </pre>
+        <h3>JavaScript Concatenation</h3>
+        <p>This function concatenates all your JavaScript files into one file for distribution. This along with minify will help you use less storage.</p>
             <pre>
                 <code class="code css language-js">
                     <span class="code-function"><span class="code-title">gulp</span>.task(<span class="code-keyword">'scripts'</span>, <span class="code-func">function()</span></span>{
@@ -57,6 +68,8 @@
                     });
                 </code>
             </pre>
+        <h3>JSHint</h3>
+        <p>JSHint is a troubeshooting/error checking tool that makes it easier to see where you messed up code.</p>
             <pre>
                 <code class="code css language-js">
                     <span class="code-function"><span class="code-title">gulp</span>.task(<span class="code-keyword">'hint'</span>, <span class="code-func">function()</span></span>{
@@ -66,11 +79,15 @@
                     });
                 </code>
             </pre>
+        <h3>Default</h3>
+        <p>The default function runs whenever you simply type 'gulp' in the command line. You can code it to run anything you want, but in this case, it runs all the other functions together.</p>
             <pre>
                 <code class="code css language-js">
                     <span class="code-function"><span class="code-title">gulp</span>.task(<span class="code-keyword">'default'</span>, [<span class="code-keyword">'message', 'html', 'imageMin', 'sass', 'scripts', 'hint'</span>]);</span>
                 </code>
             </pre>
+        <h3>Watch</h3>
+        <p>The watch function is a useful tool for automatically updating your distrubition files whenever you save to your source files. It will update whatever files you point it at whenver it sees a change has been made.</p>
             <pre>
                 <code class="code css language-js">
                     <span class="code-function"><span class="code-title">gulp</span>.task(<span class="code-keyword">'watch'</span>, <span class="code-func">function()</span></span>{
@@ -81,6 +98,7 @@
                     });
                 </code>
             </pre>
+        <p>jbrooks.us   -   Josh Brooks</p>
     </body>
     <script src="js/main.js"></script>
 </html>
