@@ -9,3 +9,8 @@ Debug*/Debug*\ Libs
 *.rbuistate
 *.xojo_uistate
 *.obsolete
+
+#Mac OS
+.DS_STORE
+
+node_modules/
